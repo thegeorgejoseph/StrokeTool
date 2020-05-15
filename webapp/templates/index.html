@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stroke Tool</title>
+	<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+	<link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='libs/font-awesome/css/font-awesome.min.css') }}">
+    <link href="{{ url_for('static', filename='css/bootstrap.min.css') }}" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/styles.css') }}" rel="stylesheet">
+    
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About the Tool</a>
+            </li>
+            <li>
+                <a href="#experience">How to Use the Tool</a>
+            </li>
+            <li>
+                <a href="#education">Predictor</a>
+            </li>
+            <li>
+                <a href="#projects">Analyser</a>
+            </li>
+            <li>
+                <a href="#skills">Nutrition System</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>STROKE RISK ANALYSIS</h1>
+            <h6>with</h6>
+            <h2>Intelligent Nutrition System</h2>
+            <a  class="btn-rounded-white" href="#education">Let's Go</a>
+            <br><br>
+            <!-- hitwebcounter Code START 
+            <a href="https://www.hitwebcounter.com" target="_blank">
+            <img src="https://hitwebcounter.com/counter/counter.php?page=7347673&style=0005&nbdigits=5&type=ip&initCount=200" title="Web Counter" Alt="counter free"   border="0" >
+            </a>                                    
+             -->                           
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About the Tool</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        In a country with over 5.5% of its population (nearly 73 million) living in conditions of extreme poverty, healthcare seems to be a luxury rather than an easily accessible necessity. Despite the hard times India is also second in the world, after China, to have the most number of internet users. Creating a self care healthcare tool that can be easily shared via the internet, which can be used to assess the factors that affect stroke health and employing an intelligent lifestyle system to provide nutritional and lifestyle changes to study Stroke Health in India is of utmost importance. 
+
+                        With an upsurge in stroke risk in low / medium income countries like India in the last decade, it is of upmost importance to study and understand the different factors that detrimentally affect stroke health. A system that could be easily distributed and accessed via the internet, built on real Indian data of Stroke Health from Kaggle, this tool aims to provide an insight to the factors that may result in the increase of probability of stroke risk in an individual. The application aims to be a self-care tool that can be used by anyone with an internet connection. Using indigenous data from the Indian subcontinent, this tool can point out major flaws in the Indian nutrition and dietary facets that could be condemning generations to decreased stroke health.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">How to Use the Tool</h2>
+        <div id="experience-timeline">
+            <div data-date="Step 1">
+                <h3>Answer a few Questions</h3>
+                <h4>Be as honest as you can</h4>
+                <p>
+                    Use the tool to answer a series of questions about your lifestyle habits.
+                </p>
+            </div>
+
+            <div data-date="Step 2">
+                <h3>Wait for Prediction to Complete</h3>
+                <h4>This phase is powered by an ML Engine</h4>
+                <p>
+                    The answers to phase 1 is utilised by our ML Engine to predict stroke risk probability.
+                </p>
+            </div>
+
+            <div data-date="Step 3 ">
+                <h3>Employ the Nutrition Assistant</h3>
+                <h4>To improve stroke health</h4>
+                <p>
+                    Use the Analyser and Nutrition System to make better and healthier lifestyle choices.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Predictor</h2>
+        <div class="education-block">
+            <form action="{{ url_for('main') }}" method="POST">
+    			<fieldset>
+        			<legend>Please answer the following questions as honestly and medically accurate as possible :</legend>
+        			What Gender do you identify as:
+        			<select id="gender" name="gender">
+                    <option value="male">Male</option>
+                    <option value="female">Female</option>
+                    </select>
+        			<br>
+        			<br> What is your Age:
+       				<input name="age"  placeholder="Enter your Age" required>
+        			<br>
+        			<br> Do you have a history of hypertension:
+        			<select id="hypertension" name="hypertension">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                     </select>
+        			<br>
+        			<br> Do you have a history of any kind of heartdisease:
+        			<select id="heartdisease" name="heartdisease">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+        			<br>
+        			<br> Were you ever married:
+        			<select id="ever_married" name="ever_married">
+                        <option value="yes">Yes</option>
+                        <option value="no">No</option>
+                    </select>
+        			<br>
+        			<br> What kind of work do you do:
+        			<select id="work_type" name="work_type">
+                        <option value="children">Children/Student</option>
+                        <option value="private">Private</option>
+                        <option value="never-worked">Never Worked</option>
+                        <option value="self-employed">Self Employed</option>
+                        <option value="government-job">Government Job</option>
+                     </select>
+        			<br>
+        			<br> In which area is your primary home situated:
+        			<select id="residence_type" name="residence_type">
+                        <option value="urban">Urban</option>
+                        <option value="rural">Rural</option>
+                    </select>
+        			<br>
+        			<br> What approximately is your fasting blood sugar level:
+        			<input name="glucose" placeholder="Enter a value close to your body glucose level" required>
+        			<br>
+        			<br> Please enter your weight:
+        			<input name="kilograms" placeholder="body weight in kilograms" required>
+        			<br>
+        			<br> Please enter your height:
+        			<input name="meters"  placeholder="body height in meters" required>
+        			<br>
+        			<br> What is your history with smoking:
+        			<select id="smoke" name="smoke">
+                        <option value="never-smoked">Never Smoked</option>
+                        <option value="formerly-smoked">Formerly Smoked</option>
+                        <option value="smokes">Smokes</option>
+                    </select>
+        			<br>
+        			<br>
+        			<input type="submit" onclick="theFunction()">
+    			</fieldset>
+			</form>
+			<br>
+			<div class="result" align="center">
+   
+        			<br> Probability of risk of stroke is:
+           				<p  style="font-size:25px">{{ result }}</p>
+            </div>
+            <div class="range" align="center">
+
+                        <p style="font-size: 10px" id="trial" onclick="myFunction()">{{ riskvar }} </p>
+
+            </div>
+        </div>
+        <!-- End .education-block -->
+
+        
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">ANALYSER AND NUTRITION SYSTEM</h2>
+        <div class="container">
+
+        	<b>What is Hypertension?</b> <br>
+
+			Blood pressure is the measure of the force of blood pushing against blood vessel walls. The heart pumps blood into blood vessels, which carry the blood throughout the body. High blood pressure, also called hypertension, is dangerous because it makes the heart work harder to pump blood out to the body and contributes to hardening of the arteries, or atherosclerosis, to stroke, kidney disease, and to heart failure.
+			<br>
+            
+            <p style="color:blue" id="hyperten" onclick="hyperanalyserFunction()">You have selected {{ hyper }} for hypertension.</p>
+            <div style="color:brown" class="hyper" id="hyper">
+			
+            </div>
+           
+			<b>What is Heart Disease?</b> <br>
+
+            Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and heart defects you're born with (congenital heart defects), among others.<br>
+            <p style="color:rgb(255, 0, 34)" id="heartdis" onclick="heartanalyserFunction()">You have selected {{ heart }} for heartdisease.</p>
+            <div style="color:brown" class="heart" id="heart">
+			
+            </div>
+
+			<b>Blood Sugar/ Glucose  :</b><br>
+
+			The ADA recommends that the following people be screened for diabetes:<br>
+
+			Anyone with a body mass index higher than 25 (23 for Asian-Americans), regardless of age, who has additional risk factors, such as high blood pressure, abnormal cholesterol levels, a sedentary lifestyle, a history of polycystic ovary syndrome or heart disease, and having a close relative with diabetes.<br>
+			Anyone older than age 45 is advised to receive an initial blood sugar screening, and then, if the results are normal, to be screened every three years thereafter.<br>
+			Any woman who has had gestational diabetes, is advised to be screened for diabetes every three years.<br>
+            Anyone who has been diagnosed with prediabetes is advised to be tested every year.<br>
+            <br>
+            You selected the value:<br>
+            <p style="color:rgb(0, 124, 124)" id="suga" onclick="sugaranalyserFunction()">{{ sugar }}</p>
+            <div style="color:brown" class="sugari" id="sugari">
+			
+
+            </div>
+            
+			<b>BMI : </b><br>
+            <p style="color:rgb(120, 153, 0)" id="bmi" onclick="bmianalyserFunction()">{{ bmin }}</p>
+            <div style="color:brown" class="beemi" id="beemi">
+			
+            </div>
+			<a  class="btn-rounded-white" href="{{ url_for('static', filename='nutrition.html') }}">Nutrition System</a>
+
+
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">AUTHORS</h2>
+        <ul>
+            <li>GEORGE JOSEPH</li>
+            <li>S.S. SARANYA</li>
+            <li>BIDUSMITA DAS</li>
+            
+        </ul>
+        <ul>
+            <a style="background-color: cornflowerblue" class="btn-rounded-white" href="http://sersc.org/journals/index.php/IJAST/article/view/11305">Check out the Implementation Paper Here</a>
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form action="https://formspree.io/xoqkvzrn"
+            method="POST">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2020 STROKE RISK TOOL
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="{{ url_for('static', filename='js/scripts.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/risk.js') }}"></script>
+</body>
+
+</html>

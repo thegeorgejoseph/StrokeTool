@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
+	
+	<title>Nutrition Assistant| Home</title>
+	
+	<link rel='stylesheet' type='text/css' href='css/style.css' />
+	
+	<!--[if IE]>
+      <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+	
+    <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.4/jquery.min.js'></script>
+    <script type='text/javascript' src='js/jquery.ba-hashchange.min.js'></script>
+    <script type='text/javascript' src='js/dynamicpage.js'></script>
+    <script type='text/javascript' src='js/prjFormEvent.js'></script>
+    <script type='text/javascript' src='js/prjoneFormEvent.js'></script>
+    <script type='text/javascript' src='js/prjtwoFormEvent.js'></script>
+    <script type='text/javascript' src='js/linking.js'></script>
+    
+</head>
+
+<body>
+
+    <?php include('../header.php'); ?>
+
+	<div id="page-wrap">
+
+        <header>
+		  <h1>Nutrition Assistant</h1>
+		
+		  <nav>
+		      <ul class="group">
+		          <li><a id="nutrition">Home</a></li>
+		          <li><a id="avoid">Foods to Avoid</a></li>
+		          <li><a id="eat">Foods to Eat</a></li>
+		      </ul>
+		  </nav>
+		</header>
+		
+		<section id="main-content">
+		<div id="guts">
+		
+		  <h2>Home</h2>
+		
+		  <b> Directions: Check of the items you think you would enjoy in each section.
+		   Mark as many items that apply.</b>
+
+		<div>
+		<form id="frmCareer" method="get" action="js/prjFormEvent.js">
+		<table id="tblCareer">
+
+		<th>Directions: Causes of Hypertension</th>
+
+		<tr><td><strong><label id="lblRealistic">"X" Section</label></strong>
+		<div id="realisticTotal"></div>
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic1">Smoking
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic2">Being overweight or obese
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic3">Lack of physical activity
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic4">Too much alcohol consumption (more than 1 or 2 per day)
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic5">Stress
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic6">Family History of High Blood Pressure
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic7">Chronic Kidney Disease
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic8">Adrenal and thyroid disorders
+		<br />
+		<input type="checkbox"
+		name="chkRealistic"
+		onclick="getRealistic()"
+		value="chkRealistic9">Sleep apnea
+		<br />
+		</tr></td>
+
+		</table><!--End of tblWhichCareer-->
+		</form><!--End of frmWhichCareer-->
+		</div>
+
+		<div>
+		<form id="frm1Career" method="get" action="js/prjoneFormEvent.js">
+		<table id="tbl1Career">
+
+		<th>Directions: Causes of Heartdisease</th>
+
+		<tr><td><strong><label id="lbl1Realistic">"Y" Section</label></strong>
+		<div id="realisticTotal"></div>
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic1">Family History of Heart Disease
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic2">Smoking
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic3">Heart Defects you are born with (Congenital Heart Defects)
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic4">Coronary Heart Disease
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic5">High BP
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic6">Excessive use of alcohol or caffeine
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic7">Drug abuse
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic8">Stress
+		<br />
+		<input type="checkbox"
+		name="chkRealisticone"
+		onclick="get1Realistic()"
+		value="chkRealistic9">Valvular Heart Disease
+		<br />
+		</tr></td>
+
+		</table><!--End of tblWhichCareer-->
+		</form><!--End of frmWhichCareer-->
+		</div>
+
+		<div>
+		<form id="frm2Career" method="get" action="js/prjtwoFormEvent.js">
+		<table id="tbl2Career">
+
+		<th>Directions: Causes of Diabetes</th>
+
+		<tr><td><strong><label id="lbl2Realistic">"R" Section</label></strong>
+		<div id="realisticTotal"></div>
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic1">BMI > 25
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic2">High Blood Pressure
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic3">Abnormal Cholestrol Levels
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic4">Sedentary Lifestyle
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic5">PCOD
+		<br />
+		<input type="checkbox"
+		name="chkRealistictwo"
+		onclick="get2Realistic()"
+		value="chkRealistic6">Close relative with diabetes
+		<br />
+		</tr></td>
+
+		</table><!--End of tblWhichCareer-->
+		</form><!--End of frmWhichCareer-->
+		</div>
+
+		</div>
+		</section>
+		
+	</div>
+	
+	<footer>
+	  &copy;2020 STROKE RISK TOOL
+	</footer>
+
+	<?php include('../footer.php'); ?>
+
+</body>
+
+</html>

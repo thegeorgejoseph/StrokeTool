@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Stroke Tool</title>
+	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+	<link rel="icon" href="favicon.ico" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,400,700,900" rel="stylesheet">
+    <link rel="stylesheet" href="libs/font-awesome/css/font-awesome.min.css">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/styles.css" rel="stylesheet">
+</head>
+
+<body>
+    <div id="mobile-menu-open" class="shadow-large">
+        <i class="fa fa-bars" aria-hidden="true"></i>
+    </div>
+    <!-- End #mobile-menu-toggle -->
+    <header>
+        <div id="mobile-menu-close">
+            <span>Close</span> <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <ul id="menu" class="shadow">
+            <li>
+                <a href="#about">About the Tool</a>
+            </li>
+            <li>
+                <a href="#experience">How to Use the Tool</a>
+            </li>
+            <li>
+                <a href="#education">Predictor</a>
+            </li>
+            <li>
+                <a href="#projects">Analyser</a>
+            </li>
+            <li>
+                <a href="#skills">Nutrition System</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+        </ul>
+    </header>
+    <!-- End header -->
+
+    <div id="lead">
+        <div id="lead-content">
+            <h1>STROKE RISK ANALYSIS</h1>
+            <h6>with</h6>
+            <h2>Intelligent Nutrition System</h2>
+            <a  class="btn-rounded-white">Let's Go</a>
+        </div>
+        <!-- End #lead-content -->
+
+        <div id="lead-overlay"></div>
+
+        <div id="lead-down">
+            <span>
+                <i class="fa fa-chevron-down" aria-hidden="true"></i>
+            </span>
+        </div>
+        <!-- End #lead-down -->
+    </div>
+    <!-- End #lead -->
+
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2 class="heading">About the Tool</h2>
+                </div>
+                <div class="col-md-8">
+                    <p>
+                        In a country with over 5.5% of its population (nearly 73 million) living in conditions of extreme poverty, healthcare seems to be a luxury rather than an easily accessible necessity. Despite the hard times India is also second in the world, after China, to have the most number of internet users. Creating a self care healthcare tool that can be easily shared via the internet, which can be used to assess the factors that affect stroke health and employing an intelligent lifestyle system to provide nutritional and lifestyle changes to study Stroke Health in India is of utmost importance. 
+
+                        With an upsurge in stroke risk in low / medium income countries like India in the last decade, it is of upmost importance to study and understand the different factors that detrimentally affect stroke health. A system that could be easily distributed and accessed via the internet, built on real Indian data of Stroke Health from Kaggle, this tool aims to provide an insight to the factors that may result in the increase of probability of stroke risk in an individual. The application aims to be a self-care tool that can be used by anyone with an internet connection. Using indigenous data from the Indian subcontinent, this tool can point out major flaws in the Indian nutrition and dietary facets that could be condemning generations to decreased stroke health.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End #about -->
+
+    <div id="experience" class="background-alt">
+        <h2 class="heading">How to Use the Tool</h2>
+        <div id="experience-timeline">
+            <div data-date="Step 1">
+                <h3>Answer a few Questions</h3>
+                <h4>Be as honest as you can</h4>
+                <p>
+                    Use the tool to answer a series of questions about your lifestyle habits.
+                </p>
+            </div>
+
+            <div data-date="Step 2">
+                <h3>Wait for Prediction to Complete</h3>
+                <h4>This phase is powered by an ML Engine</h4>
+                <p>
+                    The answers to phase 1 is utilised by our ML Engine to predict stroke risk probability.
+                </p>
+            </div>
+
+            <div data-date="Step 3 ">
+                <h3>Employ the Nutrition Assistant</h3>
+                <h4>To improve stroke health</h4>
+                <p>
+                    Use the Analyser and Nutrition System to make better and healthier lifestyle choices.
+                </p>
+            </div>
+        </div>
+    </div>
+    <!-- End #experience -->
+
+    <div id="education">
+        <h2 class="heading">Predictor</h2>
+        <div class="education-block">
+            <form action="{{ url_for('main') }}" method="POST">
+    			<fieldset>
+        			<legend>Input values:</legend>
+        			Gender:
+        			<input name="gender"  required>
+        			<br>
+        			<br> Age:
+       				<input name="age"  required>
+        			<br>
+        			<br> Hypertension:
+        			<input name="hypertension"  required>
+        			<br>
+        			<br> Heartdisease:
+        			<input name="heartdisease"  required>
+        			<br>
+        			<br> Ever Married?:
+        			<input name="ever_married"  required>
+        			<br>
+        			<br> Work Type:
+        			<input name="work_type"  required>
+        			<br>
+        			<br> Residence Type:
+        			<input name="residence_type"  required>
+        			<br>
+        			<br> Glucose:
+        			<input name="glucose"  required>
+        			<br>
+        			<br> Kilograms:
+        			<input name="kilograms"  required>
+        			<br>
+        			<br> Meters:
+        			<input name="meters"  required>
+        			<br>
+        			<br> Smoke:
+        			<input name="smoke"  required>
+        			<br>
+        			<br>
+        			<input type="submit">
+    			</fieldset>
+			</form>
+			<br>
+			<div class="result" align="center">
+   
+        			<br> Probability of risk of stroke is:
+           				<p style="font-size:25px">{{ result }}</p>
+			</div>
+        </div>
+        <!-- End .education-block -->
+
+        
+        <!-- End .education-block -->
+    </div>
+    <!-- End #education -->
+
+    <div id="projects" class="background-alt">
+        <h2 class="heading">ANALYSER AND NUTRITION SYSTEM</h2>
+        <div class="container">
+
+        	<b>What is Hypertension?</b> <br>
+
+			Blood pressure is the measure of the force of blood pushing against blood vessel walls. The heart pumps blood into blood vessels, which carry the blood throughout the body. High blood pressure, also called hypertension, is dangerous because it makes the heart work harder to pump blood out to the body and contributes to hardening of the arteries, or atherosclerosis, to stroke, kidney disease, and to heart failure.
+			<br>
+
+			<b>Causes of Hypertension could be : </b><br>
+
+			Smoking<br>
+			Being overweight or obese<br>
+			Lack of physical activity<br>
+			Too much salt in the diet<br>
+			Too much alcohol consumption (more than 1 to 2 drinks per day)<br>
+			Stress<br>
+			Older age<br>
+			Genetics<br>
+			Family history of high blood pressure<br>
+			Chronic kidney disease<br>
+			Adrenal and thyroid disorders<br>
+			Sleep apnea<br>
+			<br>
+
+           
+			<b>What is Heart Disease?</b> <br>
+
+			Heart disease describes a range of conditions that affect your heart. Diseases under the heart disease umbrella include blood vessel diseases, such as coronary artery disease; heart rhythm problems (arrhythmias); and heart defects you're born with (congenital heart defects), among others.<br>
+
+			<b>Causes of Heart Disease could be : </b><br>
+
+			Age<br>
+			Sex<br>
+			Family History<br>
+			Smoking<br>
+			Heart defects you're born with (congenital heart defects)<br>
+			Coronary artery disease<br>
+			High blood pressure<br>
+			Excessive use of alcohol or caffeine<br>
+			Drug abuse<br>
+			Stress<br>
+			Some over-the-counter medications, prescription medications, dietary supplements and herbal remedies<br>
+			Valvular heart disease<br>
+			<br>
+
+			<b>Blood Sugar/ Glucose  :</b><br>
+
+			The ADA recommends that the following people be screened for diabetes:<br>
+
+			Anyone with a body mass index higher than 25 (23 for Asian-Americans), regardless of age, who has additional risk factors, such as high blood pressure, abnormal cholesterol levels, a sedentary lifestyle, a history of polycystic ovary syndrome or heart disease, and having a close relative with diabetes.<br>
+			Anyone older than age 45 is advised to receive an initial blood sugar screening, and then, if the results are normal, to be screened every three years thereafter.<br>
+			Any woman who has had gestational diabetes, is advised to be screened for diabetes every three years.<br>
+			Anyone who has been diagnosed with prediabetes is advised to be tested every year.<br>
+			<br>
+			100 mg/dL is normal<br>
+			100 - 125 mg/dL is prediabetic<br>
+			126+ mg/dL is diabetic<br>
+			<br>
+
+
+			<b>BMI : </b><br>
+
+			<18.5 is underweight<br>
+
+			18.5 to 25 it is normal<br>
+
+			25 to 30 is overweight <br>
+
+			30+ obese<br>
+			<br>
+
+			<a  class="btn-rounded-white" href="nutrition.html">Nutrition System</a>
+
+
+        </div>
+    </div>
+    <!-- End #projects -->
+
+    <div id="skills">
+        <h2 class="heading">AUTHORS</h2>
+        <ul>
+            <li>GEORGE JOSEPH</li>
+            <li>S.S. SARANYA</li>
+            <li>BIDUSMITA DAS</li>
+            
+        </ul>
+    </div>
+    <!-- End #skills -->
+
+    <div id="contact">
+        <h2>Get in Touch</h2>
+        <div id="contact-form">
+            <form method="POST" action="https://formspree.io/email@email.com">
+                <input type="hidden" name="_subject" value="Contact request from personal website" />
+                <input type="email" name="_replyto" placeholder="Your email" required>
+                <textarea name="message" placeholder="Your message" required></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+        <!-- End #contact-form -->
+    </div>
+    <!-- End #contact -->
+
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-5 copyright">
+                    <p>
+                        Copyright &copy; 2019 STROKE RISK TOOL
+                    </p>
+                </div>
+                <div class="col-sm-2 top">
+                    <span id="to-top">
+                        <i class="fa fa-chevron-up" aria-hidden="true"></i>
+                    </span>
+                </div>
+                <div class="col-sm-5 social">
+                    <ul>
+                        <li>
+                            <a href="https://github.com/" target="_blank"><i class="fa fa-github" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://stackoverflow.com/" target="_blank"><i class="fa fa-stack-overflow" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://linkedin.com/" target="_blank"><i class="fa fa-linkedin" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://twitter.com/" target="_blank"><i class="fa fa-twitter" aria-hidden="true"></i></a>
+                        </li>
+                        <li>
+                            <a href="https://plus.google.com/" target="_blank"><i class="fa fa-google-plus" aria-hidden="true"></i></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- End footer -->
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+</body>
+
+</html>
